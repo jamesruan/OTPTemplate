@@ -8,7 +8,7 @@
 -export([start_link/0]).
 
 %% ------------------------------------------------------------------
-%% gen_server Call Back Function Exports
+%% gen_server Callback Function Exports
 %%
 %% gen_server module                  Callback module
 %% -----------------                  ---------------
@@ -33,15 +33,18 @@
 
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
          terminate/2, code_change/3]).
+%% ------------------------------------------------------------------
+%% Internal Function Exports
+%% ------------------------------------------------------------------
 
 %% ------------------------------------------------------------------
-%% API Function Definition
+%% API Function Definitions
 %% ------------------------------------------------------------------
 start_link() ->
 	gen_server:start_link(?MODULE, [], []).
 
 %% ------------------------------------------------------------------
-%% gen_server Call Back Function Definitions
+%% gen_server Callback Function Definitions
 %% ------------------------------------------------------------------
 
 %% Handle initiation states
@@ -97,3 +100,6 @@ terminate(Reason, State) ->
 code_change(OldVsn, State, Extra) ->
 	{ok, State}.
 
+%% ------------------------------------------------------------------
+%% Internal Function Definitions
+%% ------------------------------------------------------------------
